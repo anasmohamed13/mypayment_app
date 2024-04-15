@@ -5,6 +5,20 @@ class MyCartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'My Cart',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+            fontFamily: 'Inter',
+            fontWeight: FontWeight.w500,
+            height: 0,
+          ),
+        ),
+      ),
+    );
   }
 }
