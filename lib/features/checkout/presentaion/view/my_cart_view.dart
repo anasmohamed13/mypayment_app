@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mypayment_inegration/core/utils/styles.dart';
 
 class MyCartView extends StatelessWidget {
   const MyCartView({super.key});
@@ -10,13 +11,7 @@ class MyCartView extends StatelessWidget {
         title: const Text(
           'My Cart',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 25,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w500,
-            height: 0,
-          ),
+          style: Styles.style25,
         ),
       ),
     );
