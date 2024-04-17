@@ -1,7 +1,8 @@
+// ignore_for_file: sized_box_for_whitespace
 import 'package:flutter/material.dart';
-
 import 'package:mypayment_inegration/features/checkout/widgets/cart_info_item.dart';
 import 'package:mypayment_inegration/features/checkout/widgets/total_price.dart';
+import '../../../../core/utils/widgets/custom_button.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({
@@ -45,6 +46,10 @@ class MyCartViewBody extends StatelessWidget {
             thickness: 2,
           ),
           const TotalPrice(title: 'Total', value: r'$47.99'),
+          const SizedBox(
+            height: 25,
+          ),
+          const CustomButton(),
         ],
       ),
     );
