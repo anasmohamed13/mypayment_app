@@ -59,7 +59,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/image/—Pngtree—supermarket food green shopping basket_6295482.png
+    - assets/image/shopingcart.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
