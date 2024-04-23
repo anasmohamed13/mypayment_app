@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter_svg: ^2.0.10+1
   flutter:
     sdk: flutter
 
@@ -59,7 +60,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/image/shopingcart.png
+    - assets/image/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
