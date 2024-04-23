@@ -1,8 +1,9 @@
 // ignore_for_file: sized_box_for_whitespace
 import 'package:flutter/material.dart';
-import 'package:mypayment_inegration/features/checkout/widgets/cart_info_item.dart';
-import 'package:mypayment_inegration/features/checkout/widgets/total_price.dart';
-import '../../../../core/utils/widgets/custom_button.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/cart_info_item.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/payment_deailes.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/total_price.dart';
+import '../../../../../core/utils/widgets/custom_button.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({
@@ -51,7 +52,18 @@ class MyCartViewBody extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
-          const CustomButton(),
+          CustomButton(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) {
+                  return const PaymentDetailsView();
+                }),
+              );
+            },
+          ),
+          const SizedBox(
+            height: 12,
+          ),
         ],
       ),
     );
