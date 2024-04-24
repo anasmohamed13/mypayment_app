@@ -1,7 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 import 'package:flutter/material.dart';
 import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/cart_info_item.dart';
-import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/payment_deailes.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/payment_detailes.dart';
 import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/total_price.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
 
