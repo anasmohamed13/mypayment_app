@@ -5,8 +5,10 @@ class PaymentMethodItem extends StatelessWidget {
   const PaymentMethodItem({
     super.key,
     required this.isActive,
+    required this.image,
   });
   final bool isActive;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +48,7 @@ class PaymentMethodItem extends StatelessWidget {
         ),
         child: Center(
           child: SvgPicture.asset(
-            'assets/image/masterdcard.svg',
-            height: 20,
+            image,
           ),
         ),
       ),
