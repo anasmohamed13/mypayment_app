@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter_svg: ^2.0.10+1
+  flutter_credit_card: ^4.0.1
+  
   flutter:
     sdk: flutter
 
