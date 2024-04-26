@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, non_constant_identifier_names, avoid_types_as_parameter_names
 import 'package:flutter/material.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/thnak_you_view.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
 import 'custom_credit_card.dart';
 import 'payment_method_list_view.dart';
@@ -43,6 +44,13 @@ class _PaymentDetailsBodyState extends State<PaymentDetailsBody> {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                   } else {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const ThankYouView();
+                        },
+                      ),
+                    );
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});
                   }
