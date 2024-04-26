@@ -60,6 +60,7 @@ class MyCartViewBody extends StatelessWidget {
                 }),
               );
             },
+            title: 'Complete Payment',
           ),
           const SizedBox(
             height: 12,

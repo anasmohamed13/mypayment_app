@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, non_constant_identifier_names, avoid_types_as_parameter_names
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
+import '../../../../../core/utils/widgets/custom_button.dart';
+import 'custom_credit_card.dart';
 import 'payment_method_list_view.dart';
 
 class PaymentDetailsBody extends StatelessWidget {
@@ -8,57 +9,30 @@ class PaymentDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          PaymentMethodsListView(),
-          CustomCreditCard(),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomCreditCard extends StatefulWidget {
-  const CustomCreditCard({super.key});
-
-  @override
-  State<CustomCreditCard> createState() => _CustomCreditCardState();
-}
-
-class _CustomCreditCardState extends State<CustomCreditCard> {
-  String cardNumber = '', expiryDate = '', cardHolderName = '', cvvCode = '';
-
-  bool showBackView = false;
-  final GlobalKey<FormState> formKey = GlobalKey();
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CreditCardWidget(
-          cardNumber: cardNumber,
-          expiryDate: expiryDate,
-          cardHolderName: cardHolderName,
-          isHolderNameVisible: true,
-          cvvCode: cvvCode,
-          showBackView: showBackView,
-          onCreditCardWidgetChange: (value) {},
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: PaymentMethodsListView(),
         ),
-        CreditCardForm(
-            cardNumber: cardNumber,
-            expiryDate: expiryDate,
-            cardHolderName: cardHolderName,
-            cvvCode: cvvCode,
-            onCreditCardModelChange: (CreditCardModel) {
-              cardHolderName = CreditCardModel.cardHolderName;
-              expiryDate = CreditCardModel.expiryDate;
-              cvvCode = CreditCardModel.cvvCode;
-              cardNumber = CreditCardModel.cardNumber;
-              showBackView = CreditCardModel.isCvvFocused;
-              setState(() {});
-            },
-            formKey: formKey)
+        SliverToBoxAdapter(
+          child: CustomCreditCard(),
+        ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.only(
+                bottom: 12,
+                right: 16,
+                left: 16,
+              ),
+              child: CustomButton(
+                title: 'Pay',
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
