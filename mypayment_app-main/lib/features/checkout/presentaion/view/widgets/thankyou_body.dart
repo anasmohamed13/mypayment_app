@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'custom_dashed_line.dart';
-import 'thank_you_card.dart';
-
 class ThankYouViewBody extends StatelessWidget {
   const ThankYouViewBody({super.key});
 
@@ -13,12 +10,32 @@ class ThankYouViewBody extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          const ThankYouCard(),
+          Container(
+            decoration: ShapeDecoration(
+              color: const Color(0xFFD9D9D9),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+          ),
           Positioned(
             bottom: MediaQuery.sizeOf(context).height * .2 + 20,
             left: 20 + 8,
             right: 20 + 8,
-            child: const CustomDashedLine(),
+            child: Row(
+              children: List.generate(
+                30,
+                (index) => Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 3),
+                    child: Container(
+                      height: 1,
+                      color: const Color(0xff888888),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ),
           Positioned(
             left: -20,
