@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mypayment_inegration/core/utils/styles.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/card_info_widget.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/payment_item_info.dart';
+import 'package:mypayment_inegration/features/checkout/presentaion/view/widgets/total_price.dart';
 
 class ThankYouCard extends StatelessWidget {
   const ThankYouCard({
@@ -21,9 +24,12 @@ class ThankYouCard extends StatelessWidget {
         child: Column(
           children: [
             const Text(
-              'Thank You',
+              'Thank You!',
               textAlign: TextAlign.center,
               style: Styles.style25,
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Text(
               'You transaction was successful',
@@ -51,33 +57,21 @@ class ThankYouCard extends StatelessWidget {
               title: 'To',
               value: 'Sam Louis',
             ),
+            const Divider(
+              height: 60,
+              thickness: 2,
+            ),
+            const TotalPrice(
+              title: 'Total',
+              value: r'75$',
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const CardInfoWidget(),
           ],
         ),
       ),
-    );
-  }
-}
-
-class PaymentItemInfo extends StatelessWidget {
-  const PaymentItemInfo({super.key, required this.title, required this.value});
-  final String title, value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          style: Styles.style18,
-        ),
-        Text(
-          value,
-          textAlign: TextAlign.center,
-          style: Styles.styleBold18,
-        ),
-      ],
     );
   }
 }
